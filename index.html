@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wedding Invitation</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia,serif;
+}
+body{
+height:100vh;
+color:#f3e6c9;
+background-image:url("bg.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+.screen{
+display:none;
+height:100vh;
+width:100%;
+}
+.screen.active{
+display:block;
+}
+.overlay{
+background:rgba(0,0,0,0.68);
+height:100%;
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+h1{
+font-size:2.7rem;
+letter-spacing:2px;
+}
+h2{
+font-size:2rem;
+margin-bottom:20px;
+}
+p{
+font-size:1.2rem;
+margin:10px 0;
+}
+.amp{
+font-size:1.5rem;
+margin:12px 0;
+color:#c9a24d;
+}
+.details{
+border-top:1px solid #c9a24d;
+border-bottom:1px solid #c9a24d;
+padding:20px;
+margin:25px 0;
+width:85%;
+max-width:400px;
+}
+.details span{
+color:#c9a24d;
+font-weight:bold;
+}
+button{
+background:transparent;
+border:1px solid #c9a24d;
+color:#c9a24d;
+padding:12px 32px;
+font-size:1rem;
+cursor:pointer;
+transition:all 0.3s ease;
+letter-spacing:1px;
+}
+button:hover{
+background:#c9a24d;
+color:#000;
+}
+</style>
+</head>
+<body>
+<div id="welcome" class="screen active">
+<div class="overlay">
+<h1>Aysha Shajahan</h1>
+<div class="amp">&</div>
+<h1>Mohammed Razeen</h1>
+<br><br>
+<button onclick="showInvite()">View Invitation</button>
+</div>
+</div>
+<div id="invite" class="screen">
+<div class="overlay">
+<h2>You are warmly invited</h2>
+<p>
+With hearts full of love and happiness, we invite you to be part of a day that means the world to us.
+<strong>Aysha Shajahan</strong> and <strong>Mohammed Razeen</strong> begin a new chapter of their lives together.
+</p>
+<p>
+It would truly mean so much to have you by our side. Surrounded by family, laughter, and endless duas, this celebration is a reflection of love, faith, and all the little moments that led us here. Your presence will make this day even more special, and we can’t wait to share the joy with you.
+</p>
+<div class="details">
+<p><span>Venue:</span> *..*</p>
+<p><span>Date:</span> *..*</p>
+<p><span>Time:</span> *..*</p>
+</div>
+<button onclick="goBack()">Back</button>
+</div>
+</div>
+<script>
+function showInvite(){
+document.getElementById("welcome").classList.remove("active");
+document.getElementById("invite").classList.add("active");
+}
+function goBack(){
+document.getElementById("invite").classList.remove("active");
+document.getElementById("welcome").classList.add("active");
+}
+</script>
+</body>
+</html>
